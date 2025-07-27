@@ -67,6 +67,9 @@ RUN npm install -g npm@11.4.2
 RUN cd /usr/local/lib/node_modules/n8n/node_modules/pdfjs-dist && npm install @napi-rs/canvas
 
 EXPOSE 5678/tcp
+# Agregado: habilitar nodo IMAP
+RUN npm install -g imap-simple
+
 USER node
 ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"]
 
